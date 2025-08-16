@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Programming Topic 0: HTML & CSS Demo (No Bootstrap)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!-- 1. Basic HTML Structure -->
+    <header>
+        <h1>Web Programming Topic 0: HTML & CSS Demo</h1>
+        <nav>
+            <a href="#basic-html">Basic HTML</a> |
+            <a href="#css">CSS Styles</a> |
+            <a href="#tables">Tables</a> |
+            <a href="#images">Images</a> |
+            <a href="#forms">Forms</a> |
+            <a href="#js">JavaScript</a>
+        </nav>
+    </header>
+    <hr>
+
+    <section id="basic-html">
+        <h2>1. Basic HTML Structure & Tags</h2>
+        <p>This section demonstrates basic HTML tags:</p>
+        <ul>
+            <li><b>Paragraph:</b>
+                <p>This is a paragraph.</p>
+            </li>
+            <li><b>Headings:</b>
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+            </li>
+            <li><b>List:</b>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                </ul>
+            </li>
+            <li><b>Link:</b> <a href="https://www.example.com">Example Link</a></li>
+            <li><b>Horizontal Rule:</b>
+                <hr>
+            </li>
+            <li><b>Line Break:</b> First line<br>Second line</li>
+        </ul>
+    </section>
+    <hr>
+
+    <section id="css">
+        <h2>2. CSS Styles</h2>
+        <p style="color:blue;">This paragraph is blue (inline style).</p>
+        <h3 style="font-family:Impact; color:magenta;">Styled Heading</h3>
+        <div style="background:yellow; padding:10px;">This div has a yellow background.</div>
+    </section>
+    <hr>
+
+    <section id="tables">
+        <h2>3. Tables</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice</td>
+                    <td>alice@example.com</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>bob@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <hr>
+
+    <section id="images">
+        <h2>4. Images</h2>
+        <img src="sailboat.jpg" width="100" height="60">
+        <img src="sailboat.jpg" width="50" height="30">
+    </section>
+    <hr>
+
+    <section id="forms">
+        <h2>5. Forms</h2>
+        <form id="compareForm">
+            <input type="number" id="num1" placeholder="First number">
+            <input type="number" id="num2" placeholder="Second number">
+            <button type="submit">Compare</button>
+        </form>
+        <div id="result"></div>
+    </section>
+    <hr>
+
+    <section id="js">
+        <h2>6. JavaScript Interactivity</h2>
+        <button onclick="alert('Hello! This is a regular alert.')">Show Alert</button>
+    </section>
+    <hr>
+
+    <section id="combine">
+        <h2>7. Combining Features</h2>
+        <table border="1">
+            <tr>
+                <td><img src="sailboat.jpg" width="50" height="50"></td>
+                <td>
+                    <form>
+                        <input type="number" placeholder="Number">
+                        <button type="submit">Submit</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <h1 style="background:yellow;">Styled Heading</h1>
+    </section>
+
+    <script>
+        document.getElementById('compareForm').onsubmit = function (event) {
+            event.preventDefault();
+            var n1 = parseFloat(document.getElementById('num1').value);
+            var n2 = parseFloat(document.getElementById('num2').value);
+            var result = '';
+            if (n1 > n2) result = 'First number is greater.';
+            else if (n1 < n2) result = 'Second number is greater.';
+            else result = 'Numbers are equal.';
+            document.getElementById('result').innerText = result;
+        };
+    </script>
+</body>
+
+</html>
